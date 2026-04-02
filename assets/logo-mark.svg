@@ -1,33 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+<svg width="680" height="680" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Transparent background — safe on any bg color -->
+  <!-- Outer diamond frame — gray -->
+  <polygon points="340,88 592,340 340,592 88,340" fill="none" stroke="#c2c2c2" stroke-width="22"/>
 
-  <!-- ══ OUTER DIAMOND — thick light gray border ══
-       Achieved by stacking two polygons (outer fill, inner black cutout)
-       Outer: corners at (100,12)(188,100)(100,188)(12,100)
-       Inner cutout: inset ~16px along each edge → corners at (100,40)(160,100)(100,160)(40,100)
-  -->
-  <polygon points="100,12 188,100 100,188 12,100" fill="#B8B8C2"/>
-  <polygon points="100,40 160,100 100,160 40,100" fill="#0A0A0A"/>
+  <!-- Black gap ring -->
+  <polygon points="340,133 547,340 340,547 133,340" fill="#0a0a0a"/>
 
-  <!-- ══ INNER DIAMOND — thin purple outline ══ -->
-  <polygon points="100,44 156,100 100,156 44,100"
-           stroke="#7B3FE4" stroke-width="2.5" fill="none"/>
+  <!-- Purple ring -->
+  <polygon points="340,133 547,340 340,547 133,340" fill="none" stroke="#6b3fd4" stroke-width="10"/>
 
-  <!-- ══ GEM SHAPE — solid purple, flat-top cut diamond ══
-       7 points: flat top edge, two upper shoulders, two lower sides, bottom point
-       Flat top:  (84,72) → (116,72)
-       Shoulders: right (136,96), left (64,96)
-       Lower:     right (116,138), left (84,138)
-       Bottom:    (100,152)
-  -->
-  <polygon
-    points="84,72 116,72 136,96 116,138 100,152 84,138 64,96"
-    fill="#7B3FE4"
-  />
+  <!-- Black inner fill behind gem -->
+  <polygon points="340,148 532,340 340,532 148,340" fill="#0a0a0a"/>
 
-  <!-- Subtle gem table facet line (top flat section divider) -->
-  <line x1="74" y1="89" x2="126" y2="89"
-        stroke="#5B21B6" stroke-width="1.2" opacity="0.55"/>
+  <!-- GEM — brilliant-cut diamond -->
+  <!-- Base fill -->
+  <polygon points="292,232 388,232 462,298 340,468 218,298" fill="#5a35c0"/>
+
+  <!-- Table top face — lightest -->
+  <polygon points="292,232 388,232 370,268 310,268" fill="#a882f5"/>
+
+  <!-- Crown left -->
+  <polygon points="292,232 310,268 218,298" fill="#7a4fe0"/>
+  <!-- Crown right -->
+  <polygon points="388,232 462,298 370,268" fill="#6a40d0"/>
+  <!-- Crown center-left star -->
+  <polygon points="310,268 340,288 292,232" fill="#9060ec"/>
+  <!-- Crown center-right star -->
+  <polygon points="370,268 388,232 340,288" fill="#7a4fe0"/>
+  <!-- Crown bottom center -->
+  <polygon points="310,268 370,268 340,288" fill="#8858e8"/>
+
+  <!-- Pavilion left-outer -->
+  <polygon points="218,298 310,268 340,468" fill="#4a2aaa"/>
+  <!-- Pavilion right-outer -->
+  <polygon points="462,298 340,468 370,268" fill="#3e2298"/>
+  <!-- Pavilion left-inner -->
+  <polygon points="310,268 340,288 340,468" fill="#5535b8"/>
+  <!-- Pavilion right-inner -->
+  <polygon points="370,268 340,468 340,288" fill="#4a2aaa"/>
+  <!-- Pavilion center left -->
+  <polygon points="218,298 340,288 310,268" fill="#5030b0"/>
+  <!-- Pavilion center right -->
+  <polygon points="462,298 370,268 340,288" fill="#432898"/>
+
+  <!-- Table shine highlight -->
+  <polygon points="308,236 372,236 362,256 318,256" fill="white" opacity="0.18"/>
+  <polygon points="314,238 348,238 342,250 320,250" fill="white" opacity="0.12"/>
+
+  <!-- Facet edge strokes -->
+  <polygon points="292,232 388,232 370,268 310,268" fill="none" stroke="#0a0a0a" stroke-width="0.8" opacity="0.6"/>
+  <polygon points="292,232 388,232 462,298 340,468 218,298" fill="none" stroke="#0a0a0a" stroke-width="1" opacity="0.4"/>
+  <line x1="310" y1="268" x2="340" y2="288" stroke="#0a0a0a" stroke-width="0.6" opacity="0.5"/>
+  <line x1="370" y1="268" x2="340" y2="288" stroke="#0a0a0a" stroke-width="0.6" opacity="0.5"/>
+  <line x1="340" y1="288" x2="340" y2="468" stroke="#0a0a0a" stroke-width="0.6" opacity="0.4"/>
+  <line x1="218" y1="298" x2="340" y2="288" stroke="#0a0a0a" stroke-width="0.6" opacity="0.4"/>
+  <line x1="462" y1="298" x2="340" y2="288" stroke="#0a0a0a" stroke-width="0.6" opacity="0.4"/>
+  <line x1="310" y1="268" x2="218" y2="298" stroke="#0a0a0a" stroke-width="0.6" opacity="0.4"/>
+  <line x1="370" y1="268" x2="462" y2="298" stroke="#0a0a0a" stroke-width="0.6" opacity="0.4"/>
 
 </svg>
