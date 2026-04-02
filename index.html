@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MusicLIM — Limited-edition audio ownership, done right</title>
+  <meta name="description" content="MusicLIM is a marketplace for limited-edition audio tracks. Each release has a fixed number of copies, artist-set pricing, and encrypted streaming. Join 500 early adopters." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MusicLIM — Own music. Really own it." />
+  <meta property="og:description" content="A marketplace where artists release limited copies of their tracks at a price they set. You own the copy, you can resell it. No NFTs, no hype — just music." />
+  <meta property="og:image" content="https://musiclim.com/assets/og-cover.png" />
+  <meta property="og:url" content="https://musiclim.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MusicLIM — Own music. Really own it." />
+  <meta name="twitter:description" content="Limited-edition audio tracks with fixed artist pricing, encrypted streaming, and a peer-to-peer secondary market. 500 early adopter spots." />
+  <meta name="twitter:image" content="https://musiclim.com/assets/og-cover.png" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img src="assets/logo-mark.svg" alt="MusicLIM" width="36" height="36" />
+      <span>Music<span class="logo-lim">LIM</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#benefits">Early access</a>
+      <a href="#comments">Community</a>
+    </div>
+    <a href="#signup" class="btn btn-sm">Reserve my spot</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="waveform" id="waveform" aria-hidden="true"></div>
+  </div>
+  <div class="container">
+    <div class="badge-row">
+      <span class="badge badge-live">
+        <span class="dot"></span> Early access open
+      </span>
+    </div>
+
+    <h1 class="hero-title">
+      Own music.<br/>
+      <span class="gradient-text">Really own it.</span>
+    </h1>
+    <p class="hero-sub">
+      MusicLIM is a marketplace for limited-edition audio tracks.<br class="desktop-br"/>
+      Artists release a fixed number of copies at a price they set.<br class="desktop-br"/>
+      Your copy is encrypted, watermarked, and yours alone.
+    </p>
+
+    <!-- SIGNUP FORM -->
+    <form class="signup-form" id="signup-form" novalidate>
+      <div class="form-row">
+        <input
+          type="email"
+          id="email-input"
+          name="email"
+          placeholder="Your best email"
+          autocomplete="email"
+          required
+        />
+        <button type="submit" class="btn btn-primary" id="submit-btn">
+          <span id="btn-text">Reserve my spot</span>
+          <svg id="btn-spinner" class="spinner hidden" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-dasharray="40" stroke-dashoffset="10"/>
+          </svg>
+        </button>
+      </div>
+      <p class="form-note">
+        No spam. One confirmation email, then your private invite when we launch.
+        <a href="#privacy">Privacy policy</a>.
+      </p>
+      <div class="form-status hidden" id="form-status"></div>
+    </form>
+
+  </div>
+</section>
+
+<!-- TRUST SIGNALS -->
+<section class="trust-strip">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>AES-256-GCM encrypted streaming</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Per-copy audio watermark</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Immutable SHA-256 ownership ledger</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Artist-set prices, no hidden fees</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">Three steps to owning<br/>a track no one else can copy</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#7C3AED" stroke-width="2"/><path d="M16 24l6 6 10-12" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Browse the catalog</h3>
+        <p>Find original tracks released in limited editions. Each listing shows how many copies remain and the price set by the artist — no auctions, no speculation.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="4" stroke="#7C3AED" stroke-width="2"/><path d="M16 24h16M16 30h8" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Buy your copy</h3>
+        <p>Pay securely via Stripe. Your copy is immediately registered on the ownership ledger with a unique audio watermark embedded in the file — no one else can claim it.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M24 8v8M24 32v8M8 24h8M32 24h8" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="8" stroke="#7C3AED" stroke-width="2"/></svg>
+        </div>
+        <h3>Listen or resell</h3>
+        <p>Stream your tracks in full quality from any device, encrypted end-to-end. Or list your copy on the secondary market at a price you choose — peer-to-peer, no intermediaries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS / EARLY ADOPTER -->
+<section class="section section-dark" id="benefits">
+  <div class="container">
+    <div class="section-label light">First 500 only</div>
+    <h2 class="section-title light">What you get by joining now</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🎵</div>
+        <h3>One free track at launch</h3>
+        <p>You'll receive a complimentary copy from one of our 10 founding artists — not available anywhere else.</p>
+      </div>
+      <div class="benefit-card highlight">
+        <div class="benefit-badge">Most requested</div>
+        <div class="benefit-icon">⚡</div>
+        <h3>48-hour head start</h3>
+        <p>Early adopters get access two days before public launch, when founding artists release their first batches at opening prices.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💜</div>
+        <h3>Zero fees for 12 months</h3>
+        <p>No transaction fees on any purchase or resale for your first year. Standard users pay 5% per sale.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎨</div>
+        <h3>Permanent Founder badge</h3>
+        <p>Your profile will carry a numbered Founder badge — #1 through #500 — for as long as you use the platform.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🗳️</div>
+        <h3>Input on the roadmap</h3>
+        <p>Access to the private Founders Discord channel, where you vote on feature priorities before each development cycle.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📈</div>
+        <h3>Monthly market report</h3>
+        <p>Each month we share secondary market data: which tracks changed hands, at what prices, and where demand is growing — no fluff, real numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARE SECTION -->
+<section class="section" id="share">
+  <div class="container container-narrow">
+    <div class="share-box">
+      <div class="share-inner">
+        <div class="share-text">
+          <h2>Know someone who actually cares<br/>about music?</h2>
+          <p>Every spot filled brings the launch closer. Share MusicLIM and help us reach 500.</p>
+        </div>
+        <div class="share-buttons">
+          <button class="share-btn share-native" id="btn-share-native" title="Share">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Share
+          </button>
+          <a class="share-btn share-twitter" id="btn-share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Twitter / X
+          </a>
+          <a class="share-btn share-whatsapp" id="btn-share-whatsapp" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a class="share-btn share-linkedin" id="btn-share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="share-link-box">
+          <input type="text" id="share-url" value="https://musiclim.com" readonly />
+          <button class="btn-copy" id="btn-copy" title="Copy link">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" stroke-width="2"/></svg>
+            <span id="copy-label">Copy</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENTS -->
+<section class="section section-comments" id="comments">
+  <div class="container container-narrow">
+    <div class="section-label">Community</div>
+    <h2 class="section-title">What early adopters are saying</h2>
+
+    <!-- Comments list -->
+    <div class="comments-list" id="comments-list">
+    </div>
+
+    <!-- Comment form -->
+    <div class="comment-form-wrap">
+      <h3>Leave a comment</h3>
+      <p class="comment-form-note">Share what convinced you — or what you're still unsure about. Comments are reviewed before they go live.</p>
+      <form class="comment-form" id="comment-form" novalidate>
+        <div class="comment-form-row">
+          <input type="text" id="comment-name" placeholder="Your name" maxlength="50" required />
+          <input type="email" id="comment-email" placeholder="Email (not published)" required />
+        </div>
+        <textarea id="comment-text" placeholder="Write your comment..." rows="4" maxlength="500" required></textarea>
+        <div class="comment-form-footer">
+          <span class="char-count"><span id="char-remaining">500</span> characters left</span>
+          <button type="submit" class="btn btn-primary">Submit comment</button>
+        </div>
+      </form>
+      <div class="comment-status hidden" id="comment-status"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section section-cta" id="signup">
+  <div class="container container-narrow">
+    <div class="cta-box">
+      <h2>Reserve your early access spot.</h2>
+      <p>Sign up now to get 48-hour head start, zero fees for 12 months, and a permanent Founder badge.</p>
+      <form class="signup-form" id="signup-form-2" novalidate>
+        <div class="form-row">
+          <input
+            type="email"
+            id="email-input-2"
+            name="email"
+            placeholder="Your best email"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" class="btn btn-primary">
+            Reserve my spot
+          </button>
+        </div>
+        <p class="form-note">No spam. One confirmation email, then your private access when we launch.</p>
+        <div class="form-status hidden" id="form-status-2"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="privacy">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="assets/logo-mark.svg" alt="MusicLIM" width="30" height="30" />
+          <span>Music<span class="logo-lim">LIM</span></span>
+        </a>
+        <p>A marketplace for limited-edition audio tracks.</p>
+        <p class="footer-copy">&copy; 2026 MusicLIM</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#how-it-works">How it works</a>
+          <a href="#benefits">Early access perks</a>
+          <a href="#comments">Community</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms of service</a>
+          <a href="#">Cookie policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@musiclim.com">hello@musiclim.com</a>
+          <a href="#" target="_blank" rel="noopener">Discord</a>
+          <a href="#" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast hidden" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

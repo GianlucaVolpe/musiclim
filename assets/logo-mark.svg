@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+
+  <!-- Transparent background — safe on any bg color -->
+
+  <!-- ══ OUTER DIAMOND — thick light gray border ══
+       Achieved by stacking two polygons (outer fill, inner black cutout)
+       Outer: corners at (100,12)(188,100)(100,188)(12,100)
+       Inner cutout: inset ~16px along each edge → corners at (100,40)(160,100)(100,160)(40,100)
+  -->
+  <polygon points="100,12 188,100 100,188 12,100" fill="#B8B8C2"/>
+  <polygon points="100,40 160,100 100,160 40,100" fill="#0A0A0A"/>
+
+  <!-- ══ INNER DIAMOND — thin purple outline ══ -->
+  <polygon points="100,44 156,100 100,156 44,100"
+           stroke="#7B3FE4" stroke-width="2.5" fill="none"/>
+
+  <!-- ══ GEM SHAPE — solid purple, flat-top cut diamond ══
+       7 points: flat top edge, two upper shoulders, two lower sides, bottom point
+       Flat top:  (84,72) → (116,72)
+       Shoulders: right (136,96), left (64,96)
+       Lower:     right (116,138), left (84,138)
+       Bottom:    (100,152)
+  -->
+  <polygon
+    points="84,72 116,72 136,96 116,138 100,152 84,138 64,96"
+    fill="#7B3FE4"
+  />
+
+  <!-- Subtle gem table facet line (top flat section divider) -->
+  <line x1="74" y1="89" x2="126" y2="89"
+        stroke="#5B21B6" stroke-width="1.2" opacity="0.55"/>
+
+</svg>
